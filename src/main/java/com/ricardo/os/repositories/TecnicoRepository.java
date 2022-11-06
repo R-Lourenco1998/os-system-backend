@@ -1,0 +1,11 @@
+package com.ricardo.os.repositories;
+
+import com.ricardo.os.domain.Tecnico;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TecnicoRepository extends JpaRepository<Tecnico, Integer> {
+
+}
+
