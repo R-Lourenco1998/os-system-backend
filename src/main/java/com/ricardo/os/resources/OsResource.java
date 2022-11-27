@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/os")
+@CrossOrigin("*")
 public class OsResource {
 
     @Autowired

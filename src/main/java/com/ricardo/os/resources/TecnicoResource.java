@@ -10,12 +10,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/tecnicos")
+@CrossOrigin("*")
 public class TecnicoResource {
 
     @Autowired
