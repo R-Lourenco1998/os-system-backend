@@ -1,15 +1,13 @@
 package com.ricardo.os.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ricardo.os.domain.OS;
-import lombok.Getter;
-import lombok.Setter;
+import com.ricardo.os.domain.enums.Prioridade;
+import com.ricardo.os.domain.enums.Status;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
 public class OSDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,5 +39,69 @@ public class OSDTO implements Serializable {
         this.status = obj.getStatus().getCod();
         this.tecnico = obj.getTecnico().getId();
         this.cliente = obj.getCliente().getId();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getDataAbertura() {
+        return dataAbertura;
+    }
+
+    public void setDataAbertura(LocalDateTime dataAbertura) {
+        this.dataAbertura = dataAbertura;
+    }
+
+    public LocalDateTime getDataFechamento() {
+        return dataFechamento;
+    }
+
+    public void setDataFechamento(LocalDateTime dataFechamento) {
+        this.dataFechamento = dataFechamento;
+    }
+
+    public Prioridade getPrioridade() {
+        return Prioridade.toEnum(this.prioridade);
+    }
+
+    public void setPrioridade(Integer prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+
+    public Status getStatus() {
+        return Status.toEnum(this.status);
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getTecnico() {
+        return tecnico;
+    }
+
+    public void setTecnico(Integer tecnico) {
+        this.tecnico = tecnico;
+    }
+
+    public Integer getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Integer cliente) {
+        this.cliente = cliente;
     }
 }
